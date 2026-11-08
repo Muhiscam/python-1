@@ -1,13 +1,16 @@
-tuntipalkka = float(input("Anna tuntipalkka (€/h): "))
+import random
 
 
-tunnit = float(input("Anna tehdyt tunnit: "))
+def heita_noppa():
+    """Palauttaa satunnaisen silmäluvun väliltä 1-6."""
+    return random.randint(1, 6)
 
-paiva = input("Anna viikonpäivä: ").strip().lower()
 
-if paiva == "sunnuntai":
-    palkka = 2 * tuntipalkka * tunnit
-else:
-    palkka = tuntipalkka * tunnit
+def main():
+    silmaluku = 0
+    while silmaluku != 6:
+        silmaluku = heita_noppa()
+        print(f"Heitto: {silmaluku}")
 
-print(f"Päiväpalkka on {palkka:.2f} €")
+main()
+

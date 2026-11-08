@@ -1,8 +1,18 @@
-luku = int(input("Anna kokonaisluku: "))
+import random
 
-if luku % 3 == 0 and luku % 5 == 0:
-    print("jaollinen molemmilla luvuilla!")
-elif luku % 3 == 0:
-    print("kolmella jaollinen")
-elif luku % 5 == 0:
-    print("viidellä jaollinen")
+
+def heita_noppa(tahkot):
+    """Palauttaa satunnaisen silmäluvun väliltä 1-tahkot."""
+    return random.randint(1, tahkot)
+
+
+def main():
+    maksimi = int(input("Anna nopan tahkojen lukumäärä: "))
+
+    silmaluku = 0
+    while silmaluku != maksimi:
+        silmaluku = heita_noppa(maksimi)
+        print(f"Heitto: {silmaluku}")
+
+
+main()
